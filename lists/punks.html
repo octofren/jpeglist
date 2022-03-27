@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>jpeglist</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/moralis@1.5.5/dist/moralis.js"></script>
+    <script type="text/javascript" src="../nftstart.js"></script>
+    
+  </head>
+  <body onload="loadpunks()">
+    
+   <div id="container">
+		<div id="leftContainer">
+			
+      <div id="leftUpperDiv">
+				<a href="../index.html" id="jpeglist">jpeglist</a>
+			</div>
+       
+      <div id="leftBottomDiv">
+				<div id="listings">
+					<a href="#" class="text">create new post</a>
+				</div>
+				<div id="search">
+					<span>search jpegs</span>
+					<input type="text" name="text">
+					<br>
+					<button>search</button>
+				</div>
+				
+        <div id="feedback">
+					<div class="feedbackText bold"><a href="#">FAQ</a></div>
+					<div class="feedbackText bold"><a href="#">our policies</a></div>
+					<div class="feedbackText bold"><a href="#">about jpeglist</a></div>
+					<div class="feedbackText" id="questions"><a href="#">octofren@gmail.com</a></div>
+					<div class="feedbackText">updated by octofren</div>
+				</div>
+			</div>
+		</div>
+		
+     <div id="middleContainer">
+			<div id="middleContainerHeader">crypto punks</div>
+           <div id="firstList">
+  
+             <div></div>
+              <table class="jpegtable">
+              <tr>
+                <th>#</th>
+                <th>Owner Address</th>
+                <th>Token id</th>
+                <th>Image</th>
+              </tr>
+
+              <tbody id="myTable">
+        
+              </tbody>
+              </table>
+				  </div>
+		    </div>
+		</div>
+	</div>
+    
+    
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">       </script>
+
+  
+  </body>
+</html>

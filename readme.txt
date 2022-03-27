@@ -15,3 +15,9 @@ Craigslist for NFT's || Classifieds for NFT's
 
 - Display Categories & Subcategories
 -- Created 
+
+
+
+token_address;
+token_id;
+token_uri;
