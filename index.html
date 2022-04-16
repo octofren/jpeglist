@@ -1,116 +1,1004 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
-    <title>jpeglist</title>
-    <link href="/lists/style.css" rel="stylesheet" type="text/css" />
-    <script src="https://unpkg.com/moralis@1.5.5/dist/moralis.js"></script>
-  </head>
-  <body>
 
-    <script type="text/javascript" src="nftstart.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>cardtest</title>
+  <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+</head>
 
+<body class="sb-nav-fixed">
+        
+  
+  
+  <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="index.html">jpeglist</a>
+            <!-- Sidebar Toggle-->
+            <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search-->
+            <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
+                <div class="input-group">
+                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+                    <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+                </div>
+            </form>
+            <!-- Navbar
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!">Settings</a></li>
+                        <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                    </ul>
+                </li>
+            </ul> -->
+        </nav>
+        <div id="layoutSidenav">
+            <div id="layoutSidenav_nav">
+                <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
+                    <div class="sb-sidenav-menu">
+                        <div class="nav">
+                            <div class="sb-sidenav-menu-heading">Core</div>
+                            <a class="nav-link" href="index.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                myDashboard
+                            </a>
 
+                           
+                          <!-- all the side bar extras; consider removing 
+                           
+                          <div class="sb-sidenav-menu-heading">Interface</div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
+                                <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                                Layouts
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav">
+                                    <a class="nav-link" href="layout-static.html">Static Navigation</a>
+                                    <a class="nav-link" href="layout-sidenav-light.html">Light Sidenav</a>
+                                </nav>
+                            </div>
+                            <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
+                                <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
+                                Pages
+                                <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                            </a>
+                            <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
+                                <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
+                                        Authentication
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseAuth" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="login.html">Login</a>
+                                            <a class="nav-link" href="register.html">Register</a>
+                                            <a class="nav-link" href="password.html">Forgot Password</a>
+                                        </nav>
+                                    </div>
+                                    <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                                        Error
+                                        <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                                    </a>
+                                    <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordionPages">
+                                        <nav class="sb-sidenav-menu-nested nav">
+                                            <a class="nav-link" href="401.html">401 Page</a>
+                                            <a class="nav-link" href="404.html">404 Page</a>
+                                            <a class="nav-link" href="500.html">500 Page</a>
+                                        </nav>
+                                    </div>
+                                </nav>
+                            </div>
+                            <div class="sb-sidenav-menu-heading">Addons</div>
+                            <a class="nav-link" href="charts.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                                Charts
+                            </a>
+                            <a class="nav-link" href="tables.html">
+                                <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
+                                Tables
+                            </a>
+                        
+                          -->
+                          
+                        </div>
+
+                    
+                    </div>
+
+                        
+                    <div class="sb-sidenav-footer">
+                        <div class="small">Logged in as:</div>
+                        user1
+                    </div>
+                </nav>
+            </div>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 class="mt-4">top 50 nft's</h1>
+                        <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item active">by market cap (ETH)</li>
+                        </ol>
+
+    <!-- dashboard starts here -->                  
+    <div class="row">
+        <!-- 1. bayc -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">🏆1. bayc (<i class='fab fa-ethereum'></i> 1.2m)</h5>
+                    <p class="card-text">The Bored Ape Yacht Club is a collection of 10,000 unique Bored Ape NFTs— unique digital collectibles living on the Ethereum blockchain. Your Bored Ape doubles as your Yacht Club membership card, and grants access to members-only benefits.</p>
+                  
+                </div>
     
-   <div id="container">
-		<div id="leftContainer">
-			
-      <div id="leftUpperDiv">
-				<a href="#" id="jpeglist">jpeglist</a>
-			</div>
-       
-      <div id="leftBottomDiv">
-				<div id="listings">
-					<a href="#" class="text">create new post</a>
-				</div>
-				<div id="search">
-					<span>search jpegs</span>
-					<input type="text" name="text">
-					<br>
-					<button>search</button>
-				</div>
-				
-        <div id="feedback">
-					<div class="feedbackText bold"><a href="#">FAQ</a></div>
-					<div class="feedbackText bold"><a href="#">our policies</a></div>
-					<div class="feedbackText bold"><a href="#">about jpeglist</a></div>
-					<div class="feedbackText" id="questions"><a href="#">octofren@gmail.com</a></div>
-					<div class="feedbackText">updated by octofren</div>
-				</div>
-			</div>
-		</div>
-		
-     <div id="middleContainer">
-			<div id="middleContainerHeader">ethereum nfts</div>
-			<div id="middleContainerMainContainer">
-				<div id="firstList">
-					<ul>
-						<li class="listHeader">avatars</li>
-						<li class="listItem"><a href="/lists/punks.html">crypto punks</a></li>
-						<li class="listItem"><a href="/lists/clonex.html">clone x</a></li>
-						<li class="listItem"><a href="/lists/meebits.html">meebits</a></li>
-						<li class="listItem"><a href="/lists/azuki.html">azuki</a></li>
-						<li class="listItem"><a href="/lists/wow.html">world of women</a></li>
-						<li class="listItem"><a href="/lists/coolcats.html">coolcats</a></li>
-						<li class="listHeader secondListHeader">dao's</li>
-						<li class="listItem"><a href="/lists/veefriends.html">veefriends</a></li>
-						<li class="listItem"><a href="/lists/zctdao.html">zctdao</a></li>
-						<li class="listItem"><a href="/lists/irene.html">irenedao</a></li>
-					</ul>
-				</div>
-				
-        <div>
-					<ul>
-						<li class="listHeader">art</li>
-						<li class="listItem"><a href="#">artblocks</a></li>
-						<li class="listItem"><a href="#">fidenzas</a></li>
-						<li class="listItem"><a href="#">hashmasks</a></li>
-						<li class="listItem"><a href="#">ringers</a></li>
-						
-            <li class="listHeader secondListHeader">top jpeg charts</li>
-						<li class="listItem"><a href="#">top 100 nfts by market cap</a></li>
-						<li class="listItem"><a href="#">top 10 avatar nfts</a></li>
-						<li class="listItem"><a href="#">top 10 art nfts</a></li>
-						<li class="listItem"><a href="#">top 10 music nfts</a></li>
-						<li class="listItem"><a href="#">top 10 nfts by ownercount</a></li>
-						<li class="listItem"><a href="#">top 10 whale nft accounts</a></li>
-						<li class="listItem"><a href="#">top 10 nft sales</a></li>
-						<li class="listItem"><a href="#">barter / swap</a></li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-		
-     <div id="rightContainer">
-			<div id="selectDiv">
-				<select>
-					<option value="other craigslists">Select Chain</option>
-				</select>
-				<button>go</button>
-			</div>
-			
-       <div id="secondList">
-				<div id="bottomRightContainer">
-					<ul>
-						<li class="listHeader" id="jobs">jobs</li>
-						<li class="listItem"><a href="#">developer</a></li>
-						<li class="listItem"><a href="#">customer service</a></li>
-						<li class="listItem"><a href="#">community manager</a></li>
-						<li class="listItem"><a href="#">designer</a></li>
-						<li class="listItem"><a href="#">human resources</a></li>
-						<li class="listItem"><a href="#">legal / paralegal</a></li>
-						<li class="listItem"><a href="#">marketing / advertising / pr</a></li>
-						<li class="listItem"><a href="#">degen</a></li>
-						
-					</ul>
-				</div>
-			</div>
-		</div>
-	</div>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0xbc4ca0eda7647a8ab7c2061c2e118a18a936f13d">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 2. cryptopunks -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">2. cryptopunks (<i class='fab fa-ethereum'></i> 662k) </h5> 
+                    <p class="card-text">CryptoPunks launched as a fixed set of 10,000 items in mid-2017 and became one of the inspirations for the ERC-721 standard. They have been featured in places like The New York Times, Christie’s of London, Art|Basel Miami, and The PBS NewsHour.</p>
+                  
+                </div>
     
-    <script src="script.js"></script>
-     <script type="text/javascript" src="moralis_connect.js"></script>
-  </body>
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0xb47e3cd837dDF8e4c57F05d70Ab865de6e193BBB">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+         <!-- 3. mayc -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">3. mayc (<i class='fab fa-ethereum'></i> 564k) </h5> 
+                    <p class="card-text">The MUTANT APE YACHT CLUB is a collection of up to 20,000 Mutant Apes that can only be created by exposing an existing Bored Ape to a vial of MUTANT SERUM or by minting a Mutant Ape in the public sale.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0x60e4d786628fea6478f785a6d7e704777c86a7c6">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 4. clone-x -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">4. clone-x (<i class='fab fa-ethereum'></i> 414k) </h5> 
+                    <p class="card-text">20,000 next-gen Avatars, by RTFKT and Takashi Murakami 🌸</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0x49cf6f5d44e70224e2e23fdcdd2c053f30ada28b">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 5. townstar -->
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">5. townstar (<i class='fab fa-ethereum'></i> 351k) </h5> 
+                    <p class="card-text">From one of the founders of Zynga and some of the creative minds behind FarmVille and Words With Friends comes Town Star.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0xc36cF0cFcb5d905B8B513860dB0CFE63F6Cf9F5c">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 6. azuki -->                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">6. azuki (<i class='fab fa-ethereum'></i> 264k) </h5> 
+                    <p class="card-text">Azuki starts with a collection of 10,000 avatars that give you membership access to The Garden: a corner of the internet where artists, builders, and web3 enthusiasts meet to create a decentralized future. Azuki holders receive access to exclusive drops, experiences, and more</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0xed5af388653567af2f388e6224dc7c4b3241c544">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 7. sandbox land -->                                           
+        <div class="col-xl-3 col-md-6">
+              <div class="card border-dark mb-4">
+                  <div class="card-body text-dark">
+                      <h5 class="card-title">7. sandbox land (<i class='fab fa-ethereum'></i> 195k) </h5> 
+                      <p class="card-text">The Sandbox is a community-driven platform where creators can monetize voxel assets and gaming experiences on the blockchain. The Sandbox metaverse comprises a map made up of 166,464 LANDS.</p>
+                    
+                  </div>
+      
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0x5CC5B05a8A13E3fBDB0BB9FcCd98D38e50F90c38">view dashboard</a>
+                                            <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                          </div>
+                
+              </div>
+          </div>
+
+        <!-- 8. doodles -->                                           
+        <div class="col-xl-3 col-md-6">
+              <div class="card border-dark mb-4">
+                  <div class="card-body text-dark">
+                      <h5 class="card-title">8. doodles (<i class='fab fa-ethereum'></i> 170k) </h5> 
+                      <p class="card-text">A community-driven collectibles project featuring art by Burnt Toast. Doodles come in a joyful range of colors, traits and sizes with a collection size of 10,000. Each Doodle allows its owner to vote for experiences and activations paid for by the Doodles Community Treasury.</p>
+                    
+                  </div>
+      
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT%20Contract_tc27a4=0x8a90cab2b38dba80c64b7734e58ee1db38b8992e">view dashboard</a>
+                                            <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                          </div>
+                
+              </div>
+          </div>
+
+        <!-- 9. veefriends -->                                           
+        <div class="col-xl-3 col-md-6">
+              <div class="card border-dark mb-4">
+                  <div class="card-body text-dark">
+                      <h5 class="card-title">9. veefriends (<i class='fab fa-ethereum'></i> 149k) </h5> 
+                      <p class="card-text">A Gary Vaynerchuk NFT project around meaningful intellectual property and an extraordinary community.</p>
+                    
+                  </div>
+      
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xa3aee8bce55beea1951ef834b99f3ac60d1abeeb">view dashboard</a>
+                                            <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                          </div>
+                
+              </div>
+          </div>
+
+        <!-- 10. rtfk mnlth -->                                           
+        <div class="col-xl-3 col-md-6">
+              <div class="card border-dark mb-4">
+                  <div class="card-body text-dark">
+                      <h5 class="card-title">10. rtfk mnlth (<i class='fab fa-ethereum'></i> 142k) </h5> 
+                      <p class="card-text">Next-gen sneakers studios, creating IRL and virtual grails for the metaverse. Operating across realities, and simulations.</p>
+                    
+                  </div>
+      
+                  <div class="card-footer d-flex align-items-center justify-content-between">
+                                            <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x86825dFCa7A6224cfBd2DA48e85DF2fc3Aa7C4B1">view dashboard</a>
+                                            <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                          </div>
+                
+              </div>
+          </div>
+
+        <!-- 11. nft worlds -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">11. nft worlds (<i class='fab fa-ethereum'></i> 110k) </h5> 
+                    <p class="card-text">NFT Worlds is the most capable & flexible metaverse platform. Each NFT World is an explorable, limitless world that can be built into anything you can imagine.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xbd4455da5929d5639ee098abfaa3241e9ae111af">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 12. beans official -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">12. beanz (<i class='fab fa-ethereum'></i> 102k) </h5> 
+                    <p class="card-text">BEANZ coming soon.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x306b1ea3ecdf94ab739f1910bbda052ed4a9f949">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+       <!-- 13. world of women -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">13. world of women (<i class='fab fa-ethereum'></i> 101k) </h5> 
+                    <p class="card-text">A community celebrating representation, inclusivity, and equal opportunities for all. United by a first-of-its-kind collection, featuring 10,000 artworks of diverse and powerful women.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xe785e82358879f061bc3dcac6f0444462d4b5330">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+      
+        <!-- 14. meebits -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">14. meebits (<i class='fab fa-ethereum'></i> 95k) </h5> 
+                    <p class="card-text">The Meebits are 20,000 unique 3D voxel characters, created by a custom generative algorithm, then registered on the Ethereum blockchain.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x7bd29408f11d2bfc23c34f18275bbf23bb716bc7">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 15. cool cats -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">15. cool cats (<i class='fab fa-ethereum'></i> 91k) </h5> 
+                    <p class="card-text">Cool Cats is a collection of 9,999 randomly generated and stylistically curated NFTs that exist on the Ethereum Blockchain. Cool Cat holders can participate in exclusive events such as NFT claims, raffles, community giveaways, and more.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x1A92f7381B9F03921564a437210bB9396471050C">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 16. proof collective -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">16. proof collective (<i class='fab fa-ethereum'></i> 82k) </h5> 
+                    <p class="card-text">A private group of 1000 dedicated NFT collectors and artists. Membership to the collective and all of the benefits come from holding the PROOF Collective NFT.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x1A92f7381B9F03921564a437210bB9396471050C">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 17. bored ape kennel club -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">17. bored ape kennel club (<i class='fab fa-ethereum'></i> 76k) </h5> 
+                    <p class="card-text">It gets lonely in the swamp sometimes. That's why every ape should have a four-legged companion. To curl up at your feet. To bring you a beer. To fire a missile launcher at that bastard Jimmy the Monkey.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x059edd72cd353df5106d2b9cc5ab83a52287ac3a">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+      
+        <!-- 18. art blocks -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">18. art blocks (<i class='fab fa-ethereum'></i> 60k) </h5> 
+                    <p class="card-text">Chromie Squiggle by Snowfro - Art Blocks Curated</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x059EDD72Cd353dF5106D2B9cC5ab83a52287aC3a">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+         <!-- 19. adidas originals -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">19. adidas original (<i class='fab fa-ethereum'></i> 56k) </h5> 
+                    <p class="card-text">Bored Ape Yacht Club, PUNKS Comic, and gmoney welcome adidas Originals into the Metaverse.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x28472a58a490c5e09a238847f66a68a47cc76f0f">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+      
+        <!-- 20. cyberbrokers -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">20. cyberbrokers (<i class='fab fa-ethereum'></i> 51k) </h5> 
+                    <p class="card-text">The artist, Josie Bellini, presents CyberBrokers, a first-of-its-kind art collectibles ecosystem centered around 10,001 unique and on-chain CyberBroker NFTs.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x892848074ddeA461A15f337250Da3ce55580CA85">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>  
+      
+        <!-- 21. FLUF -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">21. FLUF (<i class='fab fa-ethereum'></i> 36k) </h5> 
+                    <p class="card-text">A metaverse ecosystem of NFT character collectables and a global, creative community. From our genesis collection Flufs, to Thingies, Party Bears and more to come, we’re building a world that’s yours to shape, explore and call home</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xCcc441ac31f02cD96C153DB6fd5Fe0a2F4e6A68d">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 22. imposters genesis -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">22. imposters (<i class='fab fa-ethereum'></i> 34k) </h5> 
+                    <p class="card-text">The Impostors Genesis Aliens represent the foundational NFT collection of the Impostors ecosystem, and serve as passes the Impostors Genesis Season which will play host to seven unique events.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x3110EF5f612208724CA51F5761A69081809F03B7">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 23. invisibile friends -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">23. invisible friends (<i class='fab fa-ethereum'></i> 33.3k) </h5> 
+                    <p class="card-text">Invisible Friends is a collection of 5000 animated invisible characters by Markus Magnusson.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x59468516a8259058baD1cA5F8f4BFF190d30E066">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 24. mfer -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">24. mfer (<i class='fab fa-ethereum'></i> 33.2k) </h5> 
+                    <p class="card-text">mfers are generated entirely from hand drawings by sartoshi. this project is in the public domain; feel free to use mfers any way you want</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x79FCDEF22feeD20eDDacbB2587640e45491b757f">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 26. rumblekong -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">26. rumblekong (<i class='fab fa-ethereum'></i> 33k) </h5> 
+                    <p class="card-text">Rumble Kong League is a competitive play-to-earn basketball experience, combining engaging gameplay and web3 functionalities, enabling users to compete in engaging ways through NFTs</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xEf0182dc0574cd5874494a120750FD222FdB909a">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+    
+        <!-- 27. world of women galaxy -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">27. world of women galaxy (<i class='fab fa-ethereum'></i> 32.1k) </h5> 
+                    <p class="card-text">Welcome to the second collection of World of Women! Created and Illustrated by Yam Karkai (@ykarkai). Because we are working to make the world a better place, for present and future generations, we are extending our mission to a new dimension. But where do these WoW Galaxy come from? They are simply WoWs from our first collection, who traveled through a portal to join the Galaxy. They not only experienced unexpected transformations, but also increased in numbers!</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xf61F24c2d93bF2dE187546B14425BF631F28d6dC">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 28. cyber factory 2 -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">28. cyber factory 2 (<i class='fab fa-ethereum'></i> 30.9k) </h5> 
+                    <p class="card-text">Cyber is a metaverse like no other. In under 5 clicks, anyone can create a digital experience with their NFTs.
+
+Holding an item from this collection allows you to use it as a 3D exhibition space for your digital assets oncyber.io/create</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x226Bf5293692610692E2C996C9875C914d2A7f73">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 29 cool pets -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">29. cool pets (<i class='fab fa-ethereum'></i> 29.8k) </h5> 
+                    <p class="card-text">An NFT offering from the Cool Cats brand, Pets is a collection of 19,999 NFTs that are procedurally generated based on item interaction. All Pets start as an Egg and evolve into their final form, which represents one of four elements: Grass, Fire, Water, or Air</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x86C10D10ECa1Fca9DAF87a279ABCcabe0063F247">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 30 metahero -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">30. metahero (<i class='fab fa-ethereum'></i> 29.4k) </h5> 
+                    <p class="card-text">MetaHero Identities are a collection of heroes, villains, and mutants native to the MetaHero Universe. The Core Collection consists of 146 fully-matched MetaHero concept characters, including two special mints, collaboratively designed by project creatives Chris Wahl and Odious</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x6dc6001535e15b9def7b0f6A20a2111dFA9454E2">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 31 forgotten runes -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">31. forgotten runes wizard cult (<i class='fab fa-ethereum'></i> 27k) </h5> 
+                    <p class="card-text">The Forgotten Runes Wizard's Cult is a collaborative legendarium. 10,000 unique Wizard NFTs, fully encoded on-chain. </p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x521f9C7505005CFA19A8E5786a9c3c9c9F5e6f42">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 32 neotokyo -->                                           
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">32. neotokyo citizens (<i class='fab fa-ethereum'></i> 27k) </h5> 
+                    <p class="card-text">Welcome to the home of NeoTokyo Citizens on OpenSea. Discover the best items in this collection.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xb668beB1Fa440F6cF2Da0399f8C28caB993Bdd65">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 33 Psychedelics Anonymous Genesis -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">33. psychedelics anonymous genesis (<i class='fab fa-ethereum'></i> 24.4k) </h5> 
+                    <p class="card-text">THE GENESIS PFP NFT GRANTS HOLDERS THE HIGHEST LEVEL OF PSYCHEDELICS ANONYMOUS MEMBERSHIP.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x75E95ba5997Eb235F40eCF8347cDb11F18ff640B">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 34 asm brains -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">34. asm brains (<i class='fab fa-ethereum'></i> 22.9k) </h5> 
+                    <p class="card-text">ASM Genesis Brains 🧠 Unique Artificial Intelligences owned via NFTs.
+
+Brains are capable of learning and evolving. They’re interoperable across different forms and worlds… powered by A.I, owned by you, and traded as an NFT.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x75E95ba5997Eb235F40eCF8347cDb11F18ff640B">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 35 frontier games -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">35. frontier games (<i class='fab fa-ethereum'></i> 22.7k) </h5> 
+                    <p class="card-text">Join the Battlefront. discord.gg/thewatch</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x236672Ed575E1e479b8E101AEeb920F32361f6F9">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 36 pudgy penguins -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">36. pudgy penguins (<i class='fab fa-ethereum'></i> 21.7k) </h5> 
+                    <p class="card-text">Pudgy Penguins is a collection of 8,888 NFTs, waddling through Web3. Embodying empathy & compassion, Pudgy Penguins are a beacon of positivity in the NFT Space. Each holder receives exclusive access to experiences, events, and more. </p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xBd3531dA5CF5857e7CfAA92426877b022e612cf8">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 37 genesis apostle -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">37. genesis apostle (<i class='fab fa-ethereum'></i> 19.5k) </h5> 
+                    <p class="card-text">The genesis Apostle collection by BYOPills. Apostles are 3D, game-ready avatars ready to take on the Metaverse. Apostles are required to enter the BYOVERSE, our future metaverse, and will be able to generate $TRYP, the utility token that powers the BYOPills ecosystem </p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xE70Da20A2B10d60Ca620a4E494Fe2B37C9499E97">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 38 nouns  -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">38. nouns (<i class='fab fa-ethereum'></i> 18.7k) </h5> 
+                    <p class="card-text">One Noun, every day, forever. </p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x9C8fF314C9Bc7F6e59A9d9225Fb22946427eDC03">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 39 milady maker -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">39. milady maker (<i class='fab fa-ethereum'></i> 20.5k) </h5> 
+                    <p class="card-text">Milady Maker is a collection of 10,000 generative pfpNFT's in a neochibi aesthetic inspired by street style tribes.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x5Af0D9827E0c53E4799BB226655A1de152A425a5">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 40 neotokyo -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">40. neotokyo (<i class='fab fa-ethereum'></i> 19.6k) </h5> 
+                    <p class="card-text">Welcome to the home of NeoTokyo Citizens on OpenSea. Discover the best items in this collection.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xb668beB1Fa440F6cF2Da0399f8C28caB993Bdd65">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 41 adam bomb squad -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">41. adam bomb (<i class='fab fa-ethereum'></i> 19.6k) </h5> 
+                    <p class="card-text">The Hundreds Official Adam Bomb Squad NFT Collectibles</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x7AB2352b1D2e185560494D5e577F9D3c238b78C5">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 42 chain runners -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">42. chain runners (<i class='fab fa-ethereum'></i> 19.7k) </h5> 
+                    <p class="card-text">Chain Runners are Mega City renegades 100% stored and generated on chain.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x97597002980134beA46250Aa0510C9B90d87A587">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 43 pixelated llamas -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">43. pixelated llamas (<i class='fab fa-ethereum'></i> 19.1k) </h5> 
+                    <p class="card-text">Llamaverse is a 4000 Supply Genesis Collection.
+
+</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x9df8Aa7C681f33E442A0d57B838555da863504f3">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 44 dead fellaz -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">44. deadfellaz (<i class='fab fa-ethereum'></i> 19.0k) </h5> 
+                    <p class="card-text">10,000 undead NFTs on the Ethereum blockchain. Join the horde.
+</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x9df8Aa7C681f33E442A0d57B838555da863504f3">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 45 nano pass -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">45. nano pass (<i class='fab fa-ethereum'></i> 18.9k) </h5> 
+                    <p class="card-text">//.5,555 virtual plots in the Nanoverse that also double as an early access token.
+</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xf54cC94f1F2f5De012B6Aa51F1E7eBdc43Ef5afC">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 46 jenkins the valet -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">46. jenkins the valet (<i class='fab fa-ethereum'></i> 17.6k) </h5> 
+                    <p class="card-text">Jenkins the Valet’s Writer’s Room is a collection of 6942 NFTs that unlock a members-only Web3 authenticated portal to exercise voting power and creative direction over the s1tories that define the metaverse
+</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x880644ddF208E471C6f2230d31f9027578FA6FcC">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 47 3landers -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">47. 3landers (<i class='fab fa-ethereum'></i> 17.4k) </h5> 
+                    <p class="card-text">3Landers is a collectible NFT project centered around community, adventure, and collaboration. Each 3Lander resides on the Ethereum blockchain as a unique, non-fungible token (NFT) made up out of a unique combination of traits and underlying “DNAs”</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0xb4d06d46A8285F4EC79Fd294F78a881799d8cEd9">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+  
+        <!-- 48 sappy seals -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">48. sappy seals (<i class='fab fa-ethereum'></i> 17.3k) </h5> 
+                    <p class="card-text">Sappy Seals is community-led project focused on metaverse expansion and a growing ecosystem</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x364C828eE171616a39897688A831c2499aD972ec">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 49 blitmap -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">49. blitmap (<i class='fab fa-ethereum'></i> 17k) </h5> 
+                    <p class="card-text">Blitmap is a community crafted sci-fantasy universe. All data is completely on chain</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x8d04a8c79cEB0889Bdd12acdF3Fa9D207eD3Ff63">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+
+        <!-- 50 alienfrens -->                                   
+        <div class="col-xl-3 col-md-6">
+            <div class="card border-dark mb-4">
+                <div class="card-body text-dark">
+                    <h5 class="card-title">50. alienfrens (<i class='fab fa-ethereum'></i> 16.4k) </h5> 
+                    <p class="card-text">Alien Frens is a community driven collection of 10k randomly generated NFTs on the Ethereum blockchain. Our goal is to build the biggest group of frens in the Metaverse.</p>
+                  
+                </div>
+    
+                <div class="card-footer d-flex align-items-center justify-content-between">
+                                          <a class="small text-blue stretched-link" href="https://dune.xyz/cryptuschrist/CUSTOM-NFT-Dashboard?NFT Contract_tc27a4=0x123b30E25973FeCd8354dd5f41Cc45A3065eF88C">view dashboard</a>
+                                          <div class="small text-blue"><i class="fas fa-angle-right"></i></div>
+                                        </div>
+              
+            </div>
+        </div>
+      
+    </div>
+                      
+                      
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">copyright &copy; jpeglistdotio</div>
+                            <div>
+                                <a href="#">privacy policy</a>
+                                &middot;
+                                <a href="#">terms &amp; conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="js/scripts.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+        <script src="js/datatables-simple-demo.js"></script>
+    </body>
+
 </html>

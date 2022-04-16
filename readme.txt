@@ -2,22 +2,25 @@ v1.0 jpeglist
 
 jpeglist 
 
-Craigslist for NFT's || Classifieds for NFT's
+top nft lists
 
-- Display Categories & Subcategories
-- Select Subcategory
-- Display Subcategory Analytics 
-- Post Ad for NFT 
-- Post Ad for Job
-- Send Message to seller within app
-- Create and conclude transaction in message_app (sell+barter)
+nft analytics
+ - dashboard of dashboards
+ --top100nfts
+ --top250nfts
+ --top X category (avatars, gaming, tickets) nfts
+ --by blockchain (eth, sol, matic, avax)
+
+alerts
+- alert per project
+- alert per nft wallet profile (whale, shark etc)
+
+messaging 
+- within the app (by wallet type)
+
+trade
+- (only top 100 or 250)
 
 
-- Display Categories & Subcategories
--- Created 
 
 
-
-token_address;
-token_id;
-token_uri;
