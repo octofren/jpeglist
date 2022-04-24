@@ -1,6 +1,8 @@
-v1.0 jpeglist
+v1.1 jpeglist
 
 jpeglist 
+
+[help me snipe my next nft]
 
 top nft lists
 
